@@ -25,59 +25,12 @@
 //   header('location:index.php');
 // }
 
-
-
-// $errors = '';
-// $myemail = 'xavier.loos04@gmail.com'; //<-----Put Your email address here.
-// if (
-//   empty($_POST['Nombre'])  ||
-//   empty($_POST['Email']) ||
-//   empty($_POST['Asunto'])
-// ) {
-//   $errors .= "\n Error: all fields are required";
-// }
-
-// $name = $_POST['Nombre'];
-// $email_address = $_POST['Email'];
-// $message = $_POST['Asunto'];
-
-// if (!preg_match(
-//   "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i",
-//   $email_address
-// )) {
-//   $errors .= "\n Error: Invalid email address";
-// }
-
-// if (empty($errors)) {
-
-//   $to = $myemail;
-
-//   $email_subject = "Contact form submission: $name";
-
-//   $email_body = "You have received a new message. " .
-
-//     " Here are the details:\n Name: $name \n " .
-
-//     "Email: $email_address\n Message \n $message";
-
-//   $headers = "From: $myemail\n";
-
-//   $headers .= "Reply-To: $email_address";
-
-//   mail($to, $email_subject, $email_body, $headers);
-
-//   //redirect to the 'thank you' page
-
-//   header('Location: ../index.html');
-// }
-
-
-
-
 if (isset($_POST['submit'])) {
     $name = $_POST['Nombre']; // Get Name value from HTML Form
     $email_id = $_POST['Email']; // Get Email Value
-    $msg = $_POST['Asunto']; // Get Message Value
+    $asunto = $_POST['Asunto'];
+    $msg = $_POST['Mensaje']; // Get Message Value
+
 
     $to = "xavier.loos04@gmail.com"; // You can change here your Email
     $subject = "'$name' has been sent a mail"; // This is your subject
@@ -95,6 +48,10 @@ if (isset($_POST['submit'])) {
                       <tr>
                           <td style='width:150px'><strong>Email ID: </strong></td>
                           <td style='width:400px'>$email_id</td>
+                      </tr>
+                      <tr>
+                          <td style='width:150px'><strong>Email ID: </strong></td>
+                          <td style='width:400px'>$asunto</td>
                       </tr>
                       <tr>
                           <td style='width:150px'><strong>Message: </strong></td>
