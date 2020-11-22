@@ -75,15 +75,15 @@
 
 
 if (isset($_POST['submit'])) {
-  $name = $_POST['Nombre']; // Get Name value from HTML Form
-  $email_id = $_POST['Email']; // Get Email Value
-  $msg = $_POST['Asunto']; // Get Message Value
+    $name = $_POST['Nombre']; // Get Name value from HTML Form
+    $email_id = $_POST['Email']; // Get Email Value
+    $msg = $_POST['Asunto']; // Get Message Value
 
-  $to = "xavier.loos04@gmail.com"; // You can change here your Email
-  $subject = "'$name' has been sent a mail"; // This is your subject
+    $to = "xavier.loos04@gmail.com"; // You can change here your Email
+    $subject = "'$name' has been sent a mail"; // This is your subject
 
-  // HTML Message Starts here
-  $message = "
+    // HTML Message Starts here
+    $message = "
       <html>
           <body>
               <table style='width:600px;'>
@@ -105,27 +105,27 @@ if (isset($_POST['submit'])) {
           </body>
       </html>
       ";
-  // HTML Message Ends here
+    // HTML Message Ends here
 
-  // Always set content-type when sending HTML email
-  $headers = "MIME-Version: 1.0" . "\r\n";
-  $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    // Always set content-type when sending HTML email
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-  // More headers
-  $headers .= 'From: Admin <admin@websapex.com>' . "\r\n"; // Give an email id on which you want get a reply. User will get a mail from this email id
-  $headers .= 'Cc: info@websapex.com' . "\r\n"; // If you want add cc
-  $headers .= 'Bcc: boss@websapex.com' . "\r\n"; // If you want add Bcc
+    // More headers
+    $headers .= 'From: Admin <admin@hawaiihospital.com>' . "\r\n"; // Give an email id on which you want get a reply. User will get a mail from this email id
+    $headers .= 'Cc: admin@hawaiihospital.com' . "\r\n"; // If you want add cc
+    $headers .= 'Bcc: admin@hawaiihospital.com' . "\r\n"; // If you want add Bcc
 
-  if (mail($to, $subject, $message, $headers)) {
-    // Message if mail has been sent
-    echo "<script>
-                  alert('Mail has been sent Successfully.');
-              </script>";
-  } else {
-    // Message if mail has been not sent
-    echo "<script>
-                  alert('EMAIL FAILED');
-              </script>";
-  }
+    if (mail($to, $subject, $message, $headers)) {
+        // Message if mail has been sent
+        echo "<script>
+            alert('Mail has been sent Successfully.');
+        </script>";
+    } else {
+        // Message if mail has been not sent
+        echo "<script>
+            alert('EMAIL FAILED');
+        </script>";
+    }
 }
-header("Location: ../index.html");
+header("Location: ../thankyou.html");
